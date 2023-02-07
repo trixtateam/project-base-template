@@ -1,15 +1,10 @@
-/**
- *
- * LoginPage
- *
- */
-import { ReservedTrixtaRoles } from '@trixtateam/trixta-js-core';
+import { ReservedTrixtaRoles } from "@trixtateam/trixta-js-core";
 import {
   TrixtaActionComponent,
   TrixtaLoginWidget,
-  TrixtaReactionComponent,
-} from '@trixtateam/trixta-js-rjsf';
-import { PageWrapper } from '../../components/PageWrapper';
+  TrixtaReactionComponent
+} from "@trixtateam/trixta-js-rjsf";
+import { PageWrapper } from "../../components/PageWrapper";
 
 interface Props {}
 
@@ -18,17 +13,17 @@ export function LoginPage(props: Props) {
     <PageWrapper>
       <div
         style={{
-          margin: '10px',
-          padding: '10px',
-          backgroundColor: '#dce6ea',
+          margin: "10px",
+          padding: "10px",
+          backgroundColor: "#dce6ea"
         }}
       >
         <TrixtaLoginWidget />
       </div>
       <div
         style={{
-          margin: '10px',
-          padding: '10px',
+          margin: "10px",
+          padding: "10px"
         }}
       >
         <TrixtaActionComponent
@@ -38,8 +33,8 @@ export function LoginPage(props: Props) {
       </div>
       <div
         style={{
-          margin: '10px',
-          padding: '10px',
+          margin: "10px",
+          padding: "10px"
         }}
       >
         <TrixtaReactionComponent

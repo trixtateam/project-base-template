@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "1.7.10",
     "@reduxjs/toolkit": "1.8.5",
     "@rjsf/core": "5.1.0",
     "@rjsf/utils": "5.1.0",

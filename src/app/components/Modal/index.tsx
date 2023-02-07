@@ -3,23 +3,23 @@ import { Dialog, Transition } from "@headlessui/react";
 // import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const Modal = (props: {
-  children?: React.ReactNode,
-  title: string | React.ReactNode,
-  description?: string | React.ReactNode,
-  isOpen?: boolean,
-  setModalOpen?: Function,
-  onClose?: Function,
-  modalWidth?: string
+  children?: React.ReactNode;
+  title: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  isOpen?: boolean;
+  setModalOpen?: Function;
+  onClose?: Function;
+  modalWidth?: string;
 }) => {
-    const {
-        children,
-        title,
-        description,
-        isOpen,
-        setModalOpen,
-        onClose,
-        modalWidth = "max-w-md"
-    } = props;
+  const {
+    children,
+    title,
+    description,
+    isOpen,
+    setModalOpen,
+    onClose,
+    modalWidth = "max-w-md"
+  } = props;
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -63,7 +63,7 @@ const Modal = (props: {
                     className="absolute top-1 right-1 cursor-pointer rounded-full p-1 outline-0 text-gray-900 hover:bg-gray-100"
                     onClick={() => {
                       if (setModalOpen) setModalOpen(false);
-                      onClose();
+                      // onClose();
                     }}
                   >
                     Close
