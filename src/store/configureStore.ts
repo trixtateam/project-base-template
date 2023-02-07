@@ -1,13 +1,9 @@
-import {
-  configureStore,
-  getDefaultMiddleware,
-  StoreEnhancer,
-} from '@reduxjs/toolkit';
-import { createInjectorsEnhancer } from 'redux-injectors';
+import { configureStore, StoreEnhancer } from "@reduxjs/toolkit";
+import { createInjectorsEnhancer } from "redux-injectors";
 
-import { createPhoenixChannelMiddleware } from '@trixtateam/phoenix-to-redux';
-import createSagaMiddleware from 'redux-saga';
-import { createReducer } from './reducers';
+import { createPhoenixChannelMiddleware } from "@trixtateam/phoenix-to-redux";
+import createSagaMiddleware from "redux-saga";
+import { createReducer } from "./reducers";
 
 export function configureAppStore() {
   const reduxSagaMonitorOptions = {};
@@ -22,27 +18,27 @@ export function configureAppStore() {
   const enhancers = [
     createInjectorsEnhancer({
       createReducer,
-      runSaga,
-    }),
+      runSaga
+    })
   ] as StoreEnhancer[];
 
   const store = configureStore({
     reducer: createReducer(),
-    middleware: [
+    middleware: getDefaultMiddleware => [
       ...getDefaultMiddleware({
         thunk: false,
         immutableCheck: {
-          ignore: ['socket', 'channel', 'trixta', 'phoenix', 'router'],
+          ignore: ["socket", "channel", "trixta", "phoenix", "router"]
         },
-        serializableCheck: false,
+        serializableCheck: false
       }),
-      ...middlewares,
+      ...middlewares
     ],
     devTools:
       /* istanbul ignore next line */
-      process.env.NODE_ENV !== 'production' ||
+      process.env.NODE_ENV !== "production" ||
       process.env.PUBLIC_URL.length > 0,
-    enhancers,
+    enhancers
   });
 
   return store;
